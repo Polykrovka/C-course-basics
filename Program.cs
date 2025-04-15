@@ -17,33 +17,9 @@ namespace HelloWorld {
         // void is no return type
         static void Main() {
             //PreviosLessons(); 
-
-            //START FileStream
-
-            const string textForFile = "Just some text\nlalala";
-            //using for isolete code
-            //FileStream its a class, stream is a my object, instance of class
-
-            using (FileStream stream = new FileStream("info.txt", FileMode.OpenOrCreate)) {
-                byte[] arrayBytes = System.Text.Encoding.Default.GetBytes(textForFile);
-
-                //0 how much elements to not write
-                stream.Write(arrayBytes, 0, arrayBytes.Length);
-            }
-
-            using (FileStream loadingStream = File.OpenRead("info.txt")){
-                byte[] arrayBytes = new byte[loadingStream.Length];
-                loadingStream.Read(arrayBytes, 0, arrayBytes.Length);
-
-                string textFromFile = System.Text.Encoding.Default.GetString(arrayBytes);
-                Console.WriteLine(textFromFile);
-            }
-
-            //END FileStream
-
-
+            TryCatch();
+   
         }
-
         public static byte ArraySum(byte[] digits) { 
             byte sum = 0;
             foreach( byte el in digits)
@@ -56,6 +32,23 @@ namespace HelloWorld {
 
         public static int Sum(int x, int y){  
             return x + y;
+        }
+
+        public static void TryCatch() {
+            try {
+                Console.Write("Enter a number: ");
+                int numY = 10, numX, res;
+                numX = Convert.ToInt32(Console.ReadLine());
+
+                res = numY / numX;
+                Console.WriteLine("10 / {0} = {1}", numX, res);
+            } catch(FormatException) {
+                Console.WriteLine("Frong format");
+            } catch(DivideByZeroException) {
+                Console.WriteLine("You can not divide by zero");
+            } finally {
+                Console.WriteLine("Finally");
+            }
         }
 
         public static void PreviosLessons(){
@@ -328,6 +321,31 @@ namespace HelloWorld {
             Console.WriteLine(word1.ToUpper());
 
             //END methods of string
+
+            //START FileStream
+
+            const string textForFile = "Just some text\nlalala";
+            //using for isolete code
+            //FileStream its a class, stream is a my object, instance of class
+
+            using (FileStream stream = new FileStream("info.txt", FileMode.OpenOrCreate))
+            {
+                byte[] arrayBytes = System.Text.Encoding.Default.GetBytes(textForFile);
+
+                //0 how much elements to not write
+                stream.Write(arrayBytes, 0, arrayBytes.Length);
+            }
+
+            using (FileStream loadingStream = File.OpenRead("info.txt"))
+            {
+                byte[] arrayBytes = new byte[loadingStream.Length];
+                loadingStream.Read(arrayBytes, 0, arrayBytes.Length);
+
+                string textFromFile = System.Text.Encoding.Default.GetString(arrayBytes);
+                Console.WriteLine(textFromFile);
+            }
+
+            //END FileStream
 
         }
     }
