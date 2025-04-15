@@ -12,7 +12,33 @@ using System.Collections.Generic; //For dinnamic array list
 
 namespace HelloWorld {
     class Program {
+        // static can call without creating object
+        // void is no return type
         static void Main() { 
+            //PreviosLessons();
+            int res1 = Sum(2, 3);
+            Print("Result of Sum: " + res1);
+            Print(res1.ToString());
+
+            byte[] bytesArr = { 8, 2, 3, 4, 5 };
+            Console.WriteLine(ArraySum(bytesArr));
+        }
+        
+        public static byte ArraySum(byte[] digits) { 
+            byte sum = 0;
+            foreach( byte el in digits)
+                sum += el;
+            return sum;
+        }
+        public static void Print(string str) {
+            Console.WriteLine(str);
+        }
+
+        public static int Sum(int x, int y){  
+            return x + y;
+        }
+
+        public static void PreviosLessons(){
             Console.WriteLine("Hello, World!");
             Console.Write("1 ");
             Console.Write("2 \n\n");
@@ -64,7 +90,7 @@ namespace HelloWorld {
 
             Console.WriteLine(Math.PI + " " + Math.Abs(-333));
             Console.WriteLine(Math.Floor(4.1f) + " " + Math.Ceiling(4.1f) + " " + Math.Round(4.51f) + " " + Math.Round(4.49f));
-            Console.WriteLine("Min: {0}, Max: {1}, 3**3: {2}\n", Math.Min(3,4), Math.Max(3, 4), Math.Pow(3,3));
+            Console.WriteLine("Min: {0}, Max: {1}, 3**3: {2}\n", Math.Min(3, 4), Math.Max(3, 4), Math.Pow(3, 3));
 
 
             //End Math
@@ -75,11 +101,12 @@ namespace HelloWorld {
             Console.Write("input smal number: ");
             //byte bByte = Convert.ToByte(Console.ReadLine());
             byte bByte = 20;
-            if (aByte > bByte) 
+            if (aByte > bByte)
                 Console.WriteLine("aByte > bByte\n");
             else if (aByte == bByte)
                 Console.WriteLine("aByte == bByte\n");
-            else {
+            else
+            {
                 Console.WriteLine("aByte < bByte\n");
             }
 
@@ -89,7 +116,9 @@ namespace HelloWorld {
             if (isLalaley)
             {
                 //do something
-            } else {
+            }
+            else
+            {
                 Console.WriteLine("someString still is lalaley \n");
             }
 
@@ -126,16 +155,18 @@ namespace HelloWorld {
 
             //START For, while
 
-            for (byte i = 0; i < 10; i++) {
+            for (byte i = 0; i < 10; i++)
+            {
                 if (i > 5 && i < 8)
                     continue;
-                Console.Write("i = {0} ;",i);
+                Console.Write("i = {0} ;", i);
             }
 
             Console.WriteLine();
 
             byte i2 = 0;
-            while (i2 < 10) {
+            while (i2 < 10)
+            {
                 if (i2 > 5)
                     break;
                 Console.Write("i = {0} ;", i2);
@@ -144,7 +175,8 @@ namespace HelloWorld {
 
             Console.WriteLine();
 
-            do {
+            do
+            {
                 Console.WriteLine("Do logic before if one time");
             } while (i2 > 100);
 
@@ -165,7 +197,7 @@ namespace HelloWorld {
             string[] words = new string[] { "one", "two", "three", "four", "five" };
             words[1] = "2";
 
-            for(int i = 0; i < words.Length; i++)
+            for (int i = 0; i < words.Length; i++)
                 Console.WriteLine("words[{0}] = {1}", i, words[i]);
 
             short[] numbers = new short[5];
@@ -173,7 +205,8 @@ namespace HelloWorld {
             Random random = new Random();
             short sum = 0;
 
-            for (byte i = 0; i < numbers.Length; i++) {
+            for (byte i = 0; i < numbers.Length; i++)
+            {
                 numbers[i] = (short)random.Next(-255, 255);
                 Console.WriteLine("El: " + numbers[i]);
                 sum += numbers[i];
@@ -185,7 +218,7 @@ namespace HelloWorld {
             char[,] symbols = new char[2, 3];
             symbols[0, 0] = 'a';
 
-            int[,] numsMatrix = { 
+            int[,] numsMatrix = {
                 { 1, 2, 3},
                 { 4, 5, 6},
                 { 7, 8, 9}
@@ -208,17 +241,18 @@ namespace HelloWorld {
 
             //START foreach
 
-            foreach(byte el in array){
+            foreach (byte el in array)
+            {
                 Console.WriteLine("foreach: " + el);
             }
 
             foreach (byte el in numsMatrix)
             {
-                Console.Write( el + " ");
+                Console.Write(el + " ");
             }
             Console.WriteLine();
 
-            List<int> numbersArr = new List<int>() { 7, 2, 3};
+            List<int> numbersArr = new List<int>() { 7, 2, 3 };
 
             numbersArr.Add(44);
             numbersArr.Add(55);
@@ -228,7 +262,8 @@ namespace HelloWorld {
             numbersArr.Sort();
             numbersArr.Reverse();
 
-            foreach (int el in numbersArr){
+            foreach (int el in numbersArr)
+            {
                 Console.WriteLine("List<int>: " + el);
             }
 
