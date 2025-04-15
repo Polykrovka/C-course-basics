@@ -72,8 +72,8 @@ namespace HelloWorld {
 
             byte aByte = 10;
             Console.Write("input smal number: ");
-            byte bByte = Convert.ToByte(Console.ReadLine());
-            //byte bByte = 20;
+            //byte bByte = Convert.ToByte(Console.ReadLine());
+            byte bByte = 20;
             if (aByte > bByte) 
                 Console.WriteLine("aByte > bByte\n");
             else if (aByte == bByte)
@@ -93,9 +93,61 @@ namespace HelloWorld {
             }
 
             Console.WriteLine((false || 2 > 4 || 2 < 4) + " " + (true && 5 != 5));
-            
+
 
             //END If Else
+
+            //START Switch
+
+
+            short someInput;
+            //someInput = Convert.ToInt16(Console.ReadLine());
+            someInput = 2;
+
+            switch (someInput)
+            {
+                case 1:
+                    Console.WriteLine("you are number is 1");
+                    break;
+                case 2:
+                    Console.WriteLine("you are number is 2");
+                    break;
+                case 3:
+                    Console.WriteLine("you are number is 3");
+                    break;
+                default:
+                    Console.WriteLine("Not what i expected");
+                    break;
+            }
+
+
+            //END Switch
+
+            //START For, while
+
+            for (byte i = 0; i < 10; i++) {
+                if (i > 5 && i < 8)
+                    continue;
+                Console.Write("i = {0} ;",i);
+            }
+
+            Console.WriteLine();
+
+            byte i2 = 0;
+            while (i2 < 10) {
+                if (i2 > 5)
+                    break;
+                Console.Write("i = {0} ;", i2);
+                i2++;
+            }
+
+            Console.WriteLine();
+
+            do {
+                Console.WriteLine("Do logic before if one time");
+            } while (i2 > 100);
+
+            //END For, while
 
 
         }
