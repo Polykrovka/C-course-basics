@@ -63,10 +63,39 @@ namespace HelloWorld {
 
             Console.WriteLine(Math.PI + " " + Math.Abs(-333));
             Console.WriteLine(Math.Floor(4.1f) + " " + Math.Ceiling(4.1f) + " " + Math.Round(4.51f) + " " + Math.Round(4.49f));
-            Console.WriteLine("Min: {0}, Max: {1}, 3**3: {2}", Math.Min(3,4), Math.Max(3, 4), Math.Pow(3,3));
+            Console.WriteLine("Min: {0}, Max: {1}, 3**3: {2}\n", Math.Min(3,4), Math.Max(3, 4), Math.Pow(3,3));
 
 
             //End Math
+
+            //Start If Else
+
+            byte aByte = 10;
+            Console.Write("input smal number: ");
+            byte bByte = Convert.ToByte(Console.ReadLine());
+            //byte bByte = 20;
+            if (aByte > bByte) 
+                Console.WriteLine("aByte > bByte\n");
+            else if (aByte == bByte)
+                Console.WriteLine("aByte == bByte\n");
+            else {
+                Console.WriteLine("aByte < bByte\n");
+            }
+
+            //!! also can be !=, >=, <=, || or, && and, ! not
+
+            bool isLalaley = someString != " lalaley ";
+            if (isLalaley)
+            {
+                //do something
+            } else {
+                Console.WriteLine("someString still is lalaley \n");
+            }
+
+            Console.WriteLine((false || 2 > 4 || 2 < 4) + " " + (true && 5 != 5));
+            
+
+            //END If Else
 
 
         }
