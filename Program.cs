@@ -8,6 +8,7 @@
 */
 
 using System;
+using System.Collections.Generic; //For dinnamic array list
 
 namespace HelloWorld {
     class Program {
@@ -205,6 +206,35 @@ namespace HelloWorld {
 
             //END Arrays
 
+            //START foreach
+
+            foreach(byte el in array){
+                Console.WriteLine("foreach: " + el);
+            }
+
+            foreach (byte el in numsMatrix)
+            {
+                Console.Write( el + " ");
+            }
+            Console.WriteLine();
+
+            List<int> numbersArr = new List<int>() { 7, 2, 3};
+
+            numbersArr.Add(44);
+            numbersArr.Add(55);
+            numbersArr.Add(1);
+
+            numbersArr.Remove(44);
+            numbersArr.Sort();
+            numbersArr.Reverse();
+
+            foreach (int el in numbersArr){
+                Console.WriteLine("List<int>: " + el);
+            }
+
+            Console.WriteLine(numbersArr.Exists(x => x == 7) + " " + numbersArr.IndexOf(7));
+
+            //END foreach
         }
     }
 }
