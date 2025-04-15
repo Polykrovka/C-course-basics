@@ -149,6 +149,61 @@ namespace HelloWorld {
 
             //END For, while
 
+            //START Arrays
+
+            byte[] array = new byte[5];
+            array[0] = 250;
+            array[1] = 0;
+            array[2] = 25;
+            array[3] = 20;
+            array[4] = 50;
+
+
+            Console.WriteLine("1 element of array: " + array[0]);
+
+            string[] words = new string[] { "one", "two", "three", "four", "five" };
+            words[1] = "2";
+
+            for(int i = 0; i < words.Length; i++)
+                Console.WriteLine("words[{0}] = {1}", i, words[i]);
+
+            short[] numbers = new short[5];
+
+            Random random = new Random();
+            short sum = 0;
+
+            for (byte i = 0; i < numbers.Length; i++) {
+                numbers[i] = (short)random.Next(-255, 255);
+                Console.WriteLine("El: " + numbers[i]);
+                sum += numbers[i];
+            }
+
+            Console.WriteLine("sum = " + sum);
+
+            //[,] for matrix array inside array
+            char[,] symbols = new char[2, 3];
+            symbols[0, 0] = 'a';
+
+            int[,] numsMatrix = { 
+                { 1, 2, 3},
+                { 4, 5, 6},
+                { 7, 8, 9}
+            };
+
+            numsMatrix[0, 0] = 10;
+
+            for (int i = 0; i < numsMatrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < numsMatrix.GetLength(1); j++)
+                {
+                    Console.Write(numsMatrix[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            //Console.WriteLine(symbols[0, 0]);
+
+
+            //END Arrays
 
         }
     }
