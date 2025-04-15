@@ -9,21 +9,41 @@
 
 using System;
 using System.Collections.Generic; //For dinnamic array list
+using System.IO; // input outstream for working with files
 
 namespace HelloWorld {
     class Program {
         // static can call without creating object
         // void is no return type
-        static void Main() { 
-            //PreviosLessons();
-            int res1 = Sum(2, 3);
-            Print("Result of Sum: " + res1);
-            Print(res1.ToString());
+        static void Main() {
+            //PreviosLessons(); 
 
-            byte[] bytesArr = { 8, 2, 3, 4, 5 };
-            Console.WriteLine(ArraySum(bytesArr));
+            //START FileStream
+
+            const string textForFile = "Just some text\nlalala";
+            //using for isolete code
+            //FileStream its a class, stream is a my object, instance of class
+
+            using (FileStream stream = new FileStream("info.txt", FileMode.OpenOrCreate)) {
+                byte[] arrayBytes = System.Text.Encoding.Default.GetBytes(textForFile);
+
+                //0 how much elements to not write
+                stream.Write(arrayBytes, 0, arrayBytes.Length);
+            }
+
+            using (FileStream loadingStream = File.OpenRead("info.txt")){
+                byte[] arrayBytes = new byte[loadingStream.Length];
+                loadingStream.Read(arrayBytes, 0, arrayBytes.Length);
+
+                string textFromFile = System.Text.Encoding.Default.GetString(arrayBytes);
+                Console.WriteLine(textFromFile);
+            }
+
+            //END FileStream
+
+
         }
-        
+
         public static byte ArraySum(byte[] digits) { 
             byte sum = 0;
             foreach( byte el in digits)
@@ -270,6 +290,45 @@ namespace HelloWorld {
             Console.WriteLine(numbersArr.Exists(x => x == 7) + " " + numbersArr.IndexOf(7));
 
             //END foreach
+
+            //START Methods
+
+            int res1 = Sum(2, 3);
+            Print("\nResult of Sum: " + res1);
+            Print(res1.ToString());
+
+            byte[] bytesArr = { 8, 2, 3, 4, 5 };
+            Console.WriteLine(ArraySum(bytesArr));
+
+            //END Methods
+
+            //START methods of st
+
+            string word1 = "  Hello";
+            word1 += "!!!";
+            Print(word1[1].ToString()); //ToString() convert char to string becouse Print() need string
+            Console.WriteLine(word1.Length);
+
+            word1 = String.Concat(word1, "!!");
+            Console.WriteLine(String.Compare(word1, "Hello!")); //1 if string shorter, 0 if equal, -1 if string longer
+
+            string people = "Anton, Maks, Dima";
+
+            string[] names = people.Split(", ");
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+
+            people = String.Join(" ", names);
+            Console.WriteLine(people);
+
+            Console.WriteLine("before trim: {0}, after trim: {1}", word1, word1.Trim());
+            Console.WriteLine("First 3 symbols deleted by substring: {0}, remove 4 symbols from the end of the line: {1}", word1.Substring(3), word1.Substring(0, word1.Length - 4));
+            Console.WriteLine(word1.ToUpper());
+
+            //END methods of string
+
         }
     }
 }
