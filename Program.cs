@@ -28,22 +28,19 @@ namespace HelloWorld {
             Robot bot = new Robot("Robo", 800, new byte[] { 1, 2, 3 });
             bot.printValues();
 
-            //bot.name = "Robo";
-            //bot.weight = 800;
-            //bot.coordinates = new byte[] { 1, 2, 3 };
-
-            //Console.WriteLine(bot.name + " weight: " + bot.weight);
-
             Robot bot2 = new Robot();
             bot2.setValues("killer", 1000, new byte[] { 4, 5, 6 });
             bot2.printValues();
 
-            //Robot bot2 = new Robot();
-            //bot2.name = "killer";
-            //bot2.weight = 1000;
-            //bot.coordinates = new byte[] { 4, 5, 6 };
+
+            Robot bot3 = new Robot();
+            bot3.Weight = -100; //Use accessor to set the weight
+            Console.WriteLine(bot3.Weight);
 
             Robot.Print(); //Static method
+
+            bot3.Width = 100;
+            //Console.WriteLine(bot3.Width); can not use get because it is private but still can use set
         }
         public static byte ArraySum(byte[] digits) { 
             byte sum = 0;

@@ -19,6 +19,21 @@ namespace HelloWorld {
 
         private byte[] coordinates;
 
+
+        //accessor methods names usually start with uppercase letter the same as the variable name
+        public int Weight {
+            get { Console.Write("Weight: "); return this.weight; }
+            set {
+                if(value < 1) {
+                    this.weight = 1;
+                } else {
+                    this.weight = value;
+                }
+            }
+        }
+
+        public int Width { private get; set; }
+
         //Constructor do bot return data, no ned to use void\
         //Name of the constructor is the same as the class name
         //
