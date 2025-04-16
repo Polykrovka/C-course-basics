@@ -18,17 +18,14 @@ namespace HelloWorld {
         static void Main() {
             //PreviosLessons(); 
             //TryCatch();
-
             usingRobotClass();
-
+            
             
 
         }
 
         public static void usingRobotClass() {
-            Robot bot = new Robot();
-
-            bot.setValues("Robo", 800, new byte[] { 1, 2, 3 });
+            Robot bot = new Robot("Robo", 800, new byte[] { 1, 2, 3 });
             bot.printValues();
 
             //bot.name = "Robo";
@@ -45,6 +42,8 @@ namespace HelloWorld {
             //bot2.name = "killer";
             //bot2.weight = 1000;
             //bot.coordinates = new byte[] { 4, 5, 6 };
+
+            Robot.Print(); //Static method
         }
         public static byte ArraySum(byte[] digits) { 
             byte sum = 0;
