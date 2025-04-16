@@ -28,9 +28,10 @@ namespace HelloWorld {
             Robot bot = new Robot("Robo", 800, new byte[] { 1, 2, 3 });
             bot.printValues();
 
-            Robot bot2 = new Robot();
-            bot2.setValues("killer", 1000, new byte[] { 4, 5, 6 });
-            bot2.printValues();
+            RobotKiller killer = new RobotKiller("killer", 1000, new byte[] { 4, 5, 6 }, 1000);
+            killer.printValues();
+            //killer.Health = 100; //Use accessor to set the health
+            killer.Lazer(); //Use method from the derived class
 
 
             Robot bot3 = new Robot();

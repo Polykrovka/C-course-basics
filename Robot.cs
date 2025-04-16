@@ -11,7 +11,9 @@ namespace HelloWorld {
         //protected avaliable for the class and its derived classes
         //private avaliable only for the class
 
-        private static int count = 0; //Static variable can be used even if we dot not create an object of the class
+        protected static int count = 0; //Static variable can be used even if we dot not create an object of the class
+
+        protected string color;
 
         private string name;
 
