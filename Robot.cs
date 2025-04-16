@@ -24,24 +24,25 @@ namespace HelloWorld {
         //
         public Robot(string _name, int weight, byte[] coordinates) {
             Console.WriteLine("\nObject has been created");
-            setValues(_name, weight, coordinates);
+            this.setValues(_name, weight, coordinates);
             count++; //Increment the static variable
         }
 
         //Constructor without parameters, will be used when the object is created without parameters
         public Robot() {
             Console.WriteLine("\nObject without parametrs has been created");
+            //can not this.count because it is static
             count++; //Increment the static variable
         }
 
         public void setValues(string _name, int weight, byte[] coordinates) {
             name = _name;
-            this.weight = weight;
+            this.weight = weight;  //better to use this. to avoid confusion with the parameter name
             this.coordinates = coordinates;
         }
 
         public void printValues() {
-            Console.WriteLine("\n" + name + " Weight: " + weight);
+            Console.WriteLine("\n" + this.name + " Weight: " + this.weight);
             foreach(byte coordinate in coordinates) {
                 Console.Write(coordinate + " ");
             }
