@@ -17,8 +17,34 @@ namespace HelloWorld {
         // void is no return type
         static void Main() {
             //PreviosLessons(); 
-            TryCatch();
-   
+            //TryCatch();
+
+            usingRobotClass();
+
+            
+
+        }
+
+        public static void usingRobotClass() {
+            Robot bot = new Robot();
+
+            bot.setValues("Robo", 800, new byte[] { 1, 2, 3 });
+            bot.printValues();
+
+            //bot.name = "Robo";
+            //bot.weight = 800;
+            //bot.coordinates = new byte[] { 1, 2, 3 };
+
+            //Console.WriteLine(bot.name + " weight: " + bot.weight);
+
+            Robot bot2 = new Robot();
+            bot2.setValues("killer", 1000, new byte[] { 4, 5, 6 });
+            bot2.printValues();
+
+            //Robot bot2 = new Robot();
+            //bot2.name = "killer";
+            //bot2.weight = 1000;
+            //bot.coordinates = new byte[] { 4, 5, 6 };
         }
         public static byte ArraySum(byte[] digits) { 
             byte sum = 0;
@@ -275,7 +301,9 @@ namespace HelloWorld {
             numbersArr.Sort();
             numbersArr.Reverse();
 
-            foreach (int el in numbersArr)
+            // Array.Sort(numbers); Array.Reverse(numbers); for normal array
+
+            foreach(int el in numbersArr)
             {
                 Console.WriteLine("List<int>: " + el);
             }
@@ -349,4 +377,5 @@ namespace HelloWorld {
 
         }
     }
+
 }
