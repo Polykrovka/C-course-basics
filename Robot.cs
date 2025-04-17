@@ -62,12 +62,12 @@ namespace HelloWorld {
             this.coordinates = coordinates;
         }
 
-        public void printValues() {
+        //virtual method can be overridden in the derived class
+        public virtual void printValues() {
             Console.WriteLine("\n" + this.name + " Weight: " + this.weight);
             foreach(byte coordinate in coordinates) {
                 Console.Write(coordinate + " ");
             }
-
         }
 
         public static void Print() {

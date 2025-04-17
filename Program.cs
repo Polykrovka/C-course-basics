@@ -18,8 +18,8 @@ namespace HelloWorld {
         static void Main() {
             //PreviosLessons(); 
             //TryCatch();
-            //usingRobotClass();
-            isAndAs();
+            usingRobotClass();
+            //isAndAs();
 
 
 

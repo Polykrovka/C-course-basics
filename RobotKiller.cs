@@ -17,13 +17,20 @@ namespace HelloWorld {
         public RobotKiller(string _name, int weight, byte[] coordinates, int health): base(_name, weight, coordinates) {
             Console.WriteLine("\nObject has been created");
             this.Health = health;
-            base.printValues(); //Call the base class method
+            // base.printValues(); //Call the base class method
             base.color = "Red"; //Access to the protected value of the base class
             this.color = "Blue"; //Access to the protected value of the base class anoter way
         }
 
         public void Lazer() {
             Console.WriteLine("\nLazer shot");
+        }
+
+        // Overriding the base class method
+
+        public override void printValues() {
+            base.printValues();
+            Console.WriteLine("Healts " + this.Health);
         }
 
     }
