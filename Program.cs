@@ -16,14 +16,13 @@ namespace HelloWorld {
         // static can call without creating object
         // void is no return type
         static void Main() {
-
-
-
-
+            Book idiot = new Book();
+            idiot.setValues("Idiot", "Dostoevsky");
+            idiot.printValues();
 
             //PreviosLessons(); 
             //TryCatch();
-            usingRobotClass();
+            //usingRobotClass();
             //isAndAs();
 
             //Method overloading
