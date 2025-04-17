@@ -16,18 +16,19 @@ namespace HelloWorld {
         // static can call without creating object
         // void is no return type
         static void Main() {
+
+
+
+
+
             //PreviosLessons(); 
             //TryCatch();
-            //usingRobotClass();
+            usingRobotClass();
             //isAndAs();
 
             //Method overloading
-            Multyply(2, 3);
-            Multyply(2.4f, 3.5f);
-
-
-
-
+            //Multyply(2, 3);
+            //Multyply(2.4f, 3.5f);
         }
 
         //Method overloading
@@ -45,10 +46,10 @@ namespace HelloWorld {
 
             //array of pointers (массив указателей)
             List<RobotKiller> robots = new List<RobotKiller>();
-            robots.Add(new RobotKiller("Alex", 400, new byte[] { 1, 2, 3 }, 100));
-            robots.Add(new RobotKiller("Bob", 400, new byte[] { 1, 2, 3 }, 100));
-            robots.Add(new RobotKiller("Jeam", 400, new byte[] { 1, 2, 3 }, 100));
-            robots.Add(new RobotKiller("lol", 400, new byte[] { 1, 2, 3 }, 100));
+            robots.Add(new RobotKiller("Alex", 400, new byte[] { 1, 2, 3 }, 100, Type.Enemy));
+            robots.Add(new RobotKiller("Bob", 400, new byte[] { 1, 2, 3 }, 100, Type.Enemy));
+            robots.Add(new RobotKiller("Jeam", 400, new byte[] { 1, 2, 3 }, 100, Type.Enemy));
+            robots.Add(new RobotKiller("lol", 400, new byte[] { 1, 2, 3 }, 100, Type.Hero));
 
             Robot newRobot = null;
 
@@ -73,7 +74,7 @@ namespace HelloWorld {
             Bot bot = new Bot("Robo", 800, new byte[] { 1, 2, 3 });
             bot.printValues();
 
-            RobotKiller killer = new RobotKiller("killer", 1000, new byte[] { 4, 5, 6 }, 1000);
+            RobotKiller killer = new RobotKiller("killer", 1000, new byte[] { 4, 5, 6 }, 1000, Type.Hero);
             killer.printValues();
             //killer.Health = 100; //Use accessor to set the health
             killer.Lazer(); //Use method from the derived class
