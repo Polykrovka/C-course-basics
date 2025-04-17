@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld {
     //abstract class is can not create an object of the class. Can not be instantiated(create instanse)
-    abstract class Robot {
+    abstract class Robot: IRun, IJump {
 
         //public avaliable for all, inside and outside the class
         //protected avaliable for the class and its derived classes
@@ -45,6 +45,8 @@ namespace HelloWorld {
         }
 
         public int Width { private get; set; }
+        public float speed { get; set; }
+        public float y { get; set; }
 
         //Constructor do bot return data, no ned to use void\
         //Name of the constructor is the same as the class name
@@ -81,6 +83,14 @@ namespace HelloWorld {
 
         public static void Print() {
             Console.WriteLine("\nRobot static var count of objects: {0}", count);
+        }
+
+        public void RobotRun() {
+            Console.WriteLine("Robot is running");
+        }
+
+        public void Jump() {
+            Console.WriteLine("Robot is jumping");
         }
     }
 }
