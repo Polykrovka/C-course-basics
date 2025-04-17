@@ -18,11 +18,27 @@ namespace HelloWorld {
         static void Main() {
             //PreviosLessons(); 
             //TryCatch();
-            usingRobotClass();
+            //usingRobotClass();
             //isAndAs();
 
+            //Method overloading
+            Multyply(2, 3);
+            Multyply(2.4f, 3.5f);
 
 
+
+
+        }
+
+        //Method overloading
+        public static void Multyply(int a, int b) {
+            int res = a * b;
+            Console.WriteLine("Result " + res);
+        }
+
+        public static void Multyply(float a, float b) {
+            float res = a * b;
+            Console.WriteLine("Result " + Math.Round(res, 3));
         }
 
         public static void isAndAs() {
@@ -68,7 +84,6 @@ namespace HelloWorld {
             Console.WriteLine(bot3.Weight);
 
             Bot.Print(); //Static method
-
             bot3.Width = 100;
             //Console.WriteLine(bot3.Width); can not use get because it is private but still can use set
         }

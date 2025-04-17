@@ -69,6 +69,12 @@ namespace HelloWorld {
             this.weight = weight;  //better to use this. to avoid confusion with the parameter name
             this.coordinates = coordinates;
         }
+        //overload method with the same name but different parameters
+        public void setValues(string name) {
+            this.name = name;
+        }
+
+
 
         //virtual method can be overridden in the derived class
         //public virtual void printValues() {
