@@ -21,6 +21,10 @@ namespace HelloWorld {
 
         private byte[] coordinates;
 
+        public string Name {
+            get { return this.name; }
+        }
+
 
         //accessor methods names usually start with uppercase letter the same as the variable name
         public int Weight {

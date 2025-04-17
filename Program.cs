@@ -18,12 +18,41 @@ namespace HelloWorld {
         static void Main() {
             //PreviosLessons(); 
             //TryCatch();
-            usingRobotClass();
-            
-            
+            //usingRobotClass();
+            isAndAs();
+
+
 
         }
 
+        public static void isAndAs() {
+
+            //array of pointers (массив указателей)
+            List<RobotKiller> robots = new List<RobotKiller>();
+            robots.Add(new RobotKiller("Alex", 400, new byte[] { 1, 2, 3 }, 100));
+            robots.Add(new RobotKiller("Bob", 400, new byte[] { 1, 2, 3 }, 100));
+            robots.Add(new RobotKiller("Jeam", 400, new byte[] { 1, 2, 3 }, 100));
+            robots.Add(new RobotKiller("lol", 400, new byte[] { 1, 2, 3 }, 100));
+
+            Robot newRobot = null;
+
+            foreach(RobotKiller objBot in robots) {
+                if(objBot.Name == "Jeam") {
+                    //As operator we can use to do something with the object as an object of different class
+                    newRobot = objBot as Robot;
+                    //newRobot.Laser(); can not use because it is not a method of the Robot class
+                }
+                //is operator we can use to check if the object is of the specified type. For derived classes will be true because they are also of the base class type
+                Console.WriteLine("{0} is Robot: {1}", objBot.Name, objBot is Robot);
+
+            }
+
+            float number = 5.5f;
+            Console.WriteLine(number is int);
+
+
+
+        }
         public static void usingRobotClass() {
             Robot bot = new Robot("Robo", 800, new byte[] { 1, 2, 3 });
             bot.printValues();
@@ -333,7 +362,8 @@ namespace HelloWorld {
             string people = "Anton, Maks, Dima";
 
             string[] names = people.Split(", ");
-            foreach (string name in names)
+            // .ToCharArray(); also can you to cplit string by chars
+            foreach(string name in names)
             {
                 Console.WriteLine(name);
             }
