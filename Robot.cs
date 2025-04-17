@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HelloWorld {
-    class Robot {
+    //abstract class is can not create an object of the class. Can not be instantiated(create instanse)
+    abstract class Robot {
 
         //public avaliable for all, inside and outside the class
         //protected avaliable for the class and its derived classes
@@ -38,6 +39,11 @@ namespace HelloWorld {
             }
         }
 
+        public byte[] Coordinates {
+            get { return this.coordinates; }
+            private set {}
+        }
+
         public int Width { private get; set; }
 
         //Constructor do bot return data, no ned to use void\
@@ -63,12 +69,15 @@ namespace HelloWorld {
         }
 
         //virtual method can be overridden in the derived class
-        public virtual void printValues() {
-            Console.WriteLine("\n" + this.name + " Weight: " + this.weight);
-            foreach(byte coordinate in coordinates) {
-                Console.Write(coordinate + " ");
-            }
-        }
+        //public virtual void printValues() {
+        //    Console.WriteLine("\n" + this.name + " Weight: " + this.weight);
+        //    foreach(byte coordinate in coordinates) {
+        //        Console.Write(coordinate + " ");
+        //    }
+        //}
+
+        //Abstract method can not have a body, must be implemented in the derived class
+        public abstract void printValues(); 
 
         public static void Print() {
             Console.WriteLine("\nRobot static var count of objects: {0}", count);

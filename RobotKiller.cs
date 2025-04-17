@@ -28,10 +28,14 @@ namespace HelloWorld {
 
         // Overriding the base class method
 
+        //public override void printValues() {
+        //    base.printValues();
+        //    Console.WriteLine("Healts " + this.Health);
+        //}
+
         public override void printValues() {
-            base.printValues();
+            Console.WriteLine("\n" + this.Name + " Weight: " + this.Weight);
             Console.WriteLine("Healts " + this.Health);
         }
-
     }
 }

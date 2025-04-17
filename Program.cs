@@ -43,7 +43,7 @@ namespace HelloWorld {
                     //newRobot.Laser(); can not use because it is not a method of the Robot class
                 }
                 //is operator we can use to check if the object is of the specified type. For derived classes will be true because they are also of the base class type
-                Console.WriteLine("{0} is Robot: {1}", objBot.Name, objBot is Robot);
+                Console.WriteLine("{0} is Bot: {1}", objBot.Name, objBot is Robot);
 
             }
 
@@ -54,7 +54,7 @@ namespace HelloWorld {
 
         }
         public static void usingRobotClass() {
-            Robot bot = new Robot("Robo", 800, new byte[] { 1, 2, 3 });
+            Bot bot = new Bot("Robo", 800, new byte[] { 1, 2, 3 });
             bot.printValues();
 
             RobotKiller killer = new RobotKiller("killer", 1000, new byte[] { 4, 5, 6 }, 1000);
@@ -63,11 +63,11 @@ namespace HelloWorld {
             killer.Lazer(); //Use method from the derived class
 
 
-            Robot bot3 = new Robot();
+            Bot bot3 = new Bot();
             bot3.Weight = -100; //Use accessor to set the weight
             Console.WriteLine(bot3.Weight);
 
-            Robot.Print(); //Static method
+            Bot.Print(); //Static method
 
             bot3.Width = 100;
             //Console.WriteLine(bot3.Width); can not use get because it is private but still can use set
